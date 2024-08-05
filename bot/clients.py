@@ -4,7 +4,7 @@ import logging
 from info import API_HASH, API_ID, MULTI_CLIENT, SLEEP_THRESHOLD
 from pyrogram import Client
 from util.config_parser import TokenParser
-from util.__init__.import multi_clients, work_loads, TheBlackBot
+from util.import multi_clients, work_loads, TheBlackBot
 
 async def initialize_clients():
     multi_clients[0] = TheBlackBot
