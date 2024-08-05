@@ -1,6 +1,3 @@
-
-
-
 import sys
 import glob
 import importlib
@@ -8,8 +5,6 @@ from pathlib import Path
 from pyrogram import idle
 import logging
 import logging.config
-
- 
 
 # Get logging configurations
 logging.config.fileConfig('logging.conf')
@@ -23,9 +18,6 @@ logging.basicConfig(
 logging.getLogger("aiohttp").setLevel(logging.ERROR)
 logging.getLogger("aiohttp.web").setLevel(logging.ERROR)
 
- 
-
-
 from pyrogram import Client, __version__
 from pyrogram.raw.all import layer
 from info import LOG_CHANNEL, ON_HEROKU, CLONE_MODE, PORT
@@ -36,9 +28,6 @@ from datetime import date, datetime
 import pytz
 from aiohttp import web
 from server import web_server
-
- 
-
 import asyncio
 from pyrogram import idle
 from plugins.clone import restart_bots
@@ -46,16 +35,10 @@ from bot import TheBlackBot
 from utils.keepalive import ping_server
 from bot.clients import initialize_clients
 
- 
-
-
 ppath = "plugins/*.py"
 files = glob.glob(ppath)
 TheBlackBot.start()
 loop = asyncio.get_event_loop()
-
- 
-
 
 async def start():
     print('\n')
@@ -90,8 +73,6 @@ async def start():
         await restart_bots()
     print("Bot Started Powered By @VJ_Botz")
     await idle()
-
- 
 
 if __name__ == '__main__':
     try:
