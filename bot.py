@@ -27,13 +27,13 @@ from Script import script
 from datetime import date, datetime 
 import pytz
 from aiohttp import web
-from server import web_server
 import asyncio
 from pyrogram import idle
 from plugins.clone import restart_bots
 from bot import TheBlackBot
-from utils.keepalive import ping_server
+from util.keepalive import ping_server
 from bot.clients import initialize_clients
+from server import web_server
 
 ppath = "plugins/*.py"
 files = glob.glob(ppath)
