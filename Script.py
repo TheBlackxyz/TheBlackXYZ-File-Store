@@ -7,11 +7,9 @@ class script(object):
  
 
     
-    CAPTION = """<b>📂 ғɪʟᴇɴᴀᴍᴇ : {file_name}
-
-sɪᴢᴇ ⚙️: {file_size}\n\n┣ ▫️ @TheBlackXYZ_Movies\n┣ ▫️ @TheBlackXYZ\n┣ ▫️ @TheBlackXYZBotz\n─ • ◆ •</b>""" 
-
- 
+    CAPTION = """<b>
+    📂 ғɪʟᴇɴᴀᴍᴇ : {file_name}
+    sɪᴢᴇ ⚙️: {file_size}</b>""" 
 
     SHORTENER_API_MESSAGE = """<b>Tᴏ ᴀᴅᴅ ᴏʀ ᴜᴘᴅᴀᴛᴇ ʏᴏᴜʀ Sʜᴏʀᴛɴᴇʀ Wᴇʙsɪᴛᴇ API, /api (ᴀᴘɪ)
             
