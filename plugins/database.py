@@ -1,14 +1,13 @@
- 
 
-import logging
-from struct import pack
 import re
 import base64
+import logging
+from struct import pack
 from pyrogram.file_id import FileId
 from pymongo.errors import DuplicateKeyError
 from umongo import Instance, Document, fields
 from motor.motor_asyncio import AsyncIOMotorClient
-from info import DB_URI, DB_NAME
+from info import DATABASE_URI, DATABASE_NAME
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
