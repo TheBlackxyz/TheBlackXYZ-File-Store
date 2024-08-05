@@ -1,6 +1,6 @@
 import logging, asyncio, os, re, random, pytz, aiohttp, requests, string, json, http.client
 from datetime import date, datetime
-from config import SHORTLINK_API, SHORTLINK_URL
+from info import SHORTLINK_API, SHORTLINK_URL
 from shortzy import Shortzy
 
 logger = logging.getLogger(__name__)
