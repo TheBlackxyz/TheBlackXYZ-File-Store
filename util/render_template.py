@@ -1,8 +1,8 @@
 import jinja2
 from info import LOG_CHANNEL, URL
 from bot import TheBlackBot
-from utils.human_readable import humanbytes
-from utils.file_properties import get_file_ids
+from util.human_readable import humanbytes
+from util.file_properties import get_file_ids
 from server.exceptions import InvalidHash
 import urllib.parse
 import logging
