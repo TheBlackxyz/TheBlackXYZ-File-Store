@@ -5,7 +5,7 @@ from info import LOG_CHANNEL
 from typing import Dict, Union
 from bot import work_loads
 from pyrogram import Client, utils, raw
-from utils.file_properties import get_file_ids
+from util.file_properties import get_file_ids
 from pyrogram.session import Session, Auth
 from pyrogram.errors import AuthBytesInvalid
 from server.exceptions import FIleNotFound
