@@ -136,9 +136,7 @@ Edit info.py with variables as given below then run bot
 
 ____________________________________________________________________________________________________________________________________________
 
-# Special Thanks To Everyone 💞❤️
- - <b>Thanks To Dan For His Awesome
- - [Library](https://github.com/pyrogram/pyrogram)
+# Special Thanks To...
  - Thanks To [ TheBlackXYZBotz]</b>
 
 ____________________________________________________________________________________________________________________________________________
