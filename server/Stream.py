@@ -9,9 +9,9 @@ from aiohttp.http_exceptions import BadStatusLine
 from bot import multi_clients, work_loads, TheBlackBot
 from server.exceptions import FIleNotFound, InvalidHash
 from TheBlack import StartTime, __version__
-from utils.time_format import get_readable_time
-from utils.custom_dl import ByteStreamer
-from utils.render_template import render_page
+from util.time_format import get_readable_time
+from util.custom_dl import ByteStreamer
+from util.render_template import render_page
 from info import MULTI_CLIENT
 
 routes = web.RouteTableDef()
@@ -33,8 +33,6 @@ async def root_route_handler(_):
             "version": __version__,
         }
     )
-
-
 @routes.get(r"/watch/{path:\S+}", allow_head=True)
 async def stream_handler(request: web.Request):
     try:
@@ -83,7 +81,6 @@ class_cache = {}
 
 async def media_streamer(request: web.Request, id: int, secure_hash: str):
     range_header = request.headers.get("Range", 0)
-    
     index = min(work_loads, key=work_loads.get)
     faster_client = multi_clients[index]
     
@@ -104,7 +101,7 @@ async def media_streamer(request: web.Request, id: int, secure_hash: str):
     if file_id.unique_id[:6] != secure_hash:
         logging.debug(f"Invalid hash for message with ID {id}")
         raise InvalidHash
-    
+        
     file_size = file_id.file_size
 
     if range_header:
@@ -121,20 +118,16 @@ async def media_streamer(request: web.Request, id: int, secure_hash: str):
             body="416: Range not satisfiable",
             headers={"Content-Range": f"bytes */{file_size}"},
         )
-        
     chunk_size = 1024 * 1024
-    until_bytes = min(until_bytes, file_size - 1)🤖
-
+    until_bytes = min(until_bytes, file_size - 1)
     offset = from_bytes - (from_bytes % chunk_size)
     first_part_cut = from_bytes - offset
     last_part_cut = until_bytes % chunk_size + 1
-
     req_length = until_bytes - from_bytes + 1
     part_count = math.ceil(until_bytes / chunk_size) - math.floor(offset / chunk_size)
     body = tg_connect.yield_file(
         file_id, index, offset, first_part_cut, last_part_cut, part_count, chunk_size
     )
-
     mime_type = file_id.mime_type
     file_name = file_id.file_name
     disposition = "attachment"
